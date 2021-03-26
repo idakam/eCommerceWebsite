@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: head"></head>
+<body>
+<div th:replace="fragments/fragments :: navbar"></div>
+
+<div class="container">
+    <h3 style='color: red;' th:if='${error}' th:text='${error}'></h3>
+    <div th:unless='${error}'>
+        <h3 style='color: green;'>Success!</h3>
+        <div>Id.: <span th:text='${id}'/></div>
+        <div>Status: <span th:text='${status}'/></div>
+        <div>Charge id.: <span th:text='${chargeId}'/></div>
+        <div>Balance transaction id.: <span th:text='${balance_transaction}'/></div>
+    </div>
+    <a href='/checkout.html'>Checkout again</a>
+</div>
+<footer th:replace="fragments/fragments :: footer"></footer>
+</body>
+</html>
